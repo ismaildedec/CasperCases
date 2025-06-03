@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ismai\\Desktop\\CasperCases\\Case02\\ProductApi\\ProductApi.csproj": {}
+    "C:\\Users\\ismai\\Desktop\\CasperCases\\Case02\\backend\\ProductApi\\ProductApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ismai\\Desktop\\CasperCases\\Case02\\ProductApi\\ProductApi.csproj": {
+    "C:\\Users\\ismai\\Desktop\\CasperCases\\Case02\\backend\\ProductApi\\ProductApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ismai\\Desktop\\CasperCases\\Case02\\ProductApi\\ProductApi.csproj",
+        "projectUniqueName": "C:\\Users\\ismai\\Desktop\\CasperCases\\Case02\\backend\\ProductApi\\ProductApi.csproj",
         "projectName": "ProductApi",
-        "projectPath": "C:\\Users\\ismai\\Desktop\\CasperCases\\Case02\\ProductApi\\ProductApi.csproj",
+        "projectPath": "C:\\Users\\ismai\\Desktop\\CasperCases\\Case02\\backend\\ProductApi\\ProductApi.csproj",
         "packagesPath": "C:\\Users\\ismai\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ismai\\Desktop\\CasperCases\\Case02\\ProductApi\\obj\\",
+        "outputPath": "C:\\Users\\ismai\\Desktop\\CasperCases\\Case02\\backend\\ProductApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ismai\\AppData\\Roaming\\NuGet\\NuGet.Config"

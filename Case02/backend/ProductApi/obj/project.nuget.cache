@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l4eB32DWRpu1wefuNGbXcAFRp+wvFWtMqyn61jD8rXHubzMBUg3t+wfUbA2hakD+ieLi8oE/MuStApm9Y36dKg==",
+  "dgSpecHash": "a3gdlphGzgL7Dmm7R5owyWyio2GnvzxpCZBNcTPwRVDMyq2aukOTQ17Aif0q6gRKFPm6qwoZn7JsKSjGlxftSw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ismai\\Desktop\\CasperCases\\Case02\\ProductApi\\ProductApi.csproj",
+  "projectFilePath": "C:\\Users\\ismai\\Desktop\\CasperCases\\Case02\\backend\\ProductApi\\ProductApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ismai\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
     "C:\\Users\\ismai\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

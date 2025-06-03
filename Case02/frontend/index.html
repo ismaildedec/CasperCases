@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ürün Yönetimi</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #333; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background: #f4f4f4; }
+        form { margin-top: 30px; }
+        label { display: block; margin-top: 10px; }
+        input, select { padding: 5px; margin-top: 5px; }
+        button { margin-top: 10px; padding: 8px 16px; }
+    </style>
+</head>
+<body>
+    <h1>Ürün Yönetimi</h1>
+    <h2>Ürünler</h2>
+    <table id="productsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ad</th>
+                <th>Fiyat</th>
+                <th>Kategori</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2>Yeni Ürün Ekle</h2>
+    <form id="addProductForm">
+        <label>Adı:
+            <input type="text" id="name" required />
+        </label>
+        <label>Fiyat:
+            <input type="number" id="price" required />
+        </label>
+        <label>Kategori:
+            <select id="category" required></select>
+        </label>
+        <button type="submit">Ekle</button>
+    </form>
+
+    <script>
+        const apiBase = "http://localhost:5268/products"; 
+
+        function fetchProducts() {
+            fetch(apiBase)
+                .then(r => r.json())
+                .then(data => {
+                    const tbody = document.querySelector('#productsTable tbody');
+                    tbody.innerHTML = '';
+                    data.forEach(p => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `<td>${p.id}</td><td>${p.name}</td><td>${p.price}</td><td>${p.category}</td>`;
+                        tbody.appendChild(tr);
+                    });
+                });
+        }
+
+        function fetchCategories() {
+            fetch(apiBase + '/categories')
+                .then(r => r.json())
+                .then(data => {
+                    const select = document.getElementById('category');
+                    select.innerHTML = '';
+                    data.forEach(c => {
+                        const option = document.createElement('option');
+                        option.value = c.id;
+                        option.textContent = c.name;
+                        select.appendChild(option);
+                    });
+                });
+        }
+
+        document.getElementById('addProductForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const price = parseFloat(document.getElementById('price').value);
+            const categoryId = parseInt(document.getElementById('category').value);
+            fetch(apiBase, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, price, categoryId })
+            })
+            .then(r => {
+                if (r.ok) {
+                    fetchProducts();
+                    this.reset();
+                } else {
+                    alert('Ürün eklenemedi!');
+                }
+            });
+        });
+
+
+        fetchCategories();
+        fetchProducts();
+    </script>
+</body>
+</html> 
