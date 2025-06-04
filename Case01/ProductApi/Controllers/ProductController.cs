@@ -1,39 +1,45 @@
 using Microsoft.AspNetCore.Mvc;
+using ProductApi.Services;
+using ProductApi.Models;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ProductApi.Controllers
 {
+
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
+        private readonly IProductService _productService;
 
-        private static readonly List<Product> Products = new List<Product>
+
+        public ProductController(IProductService productService)
         {
-            new Product { Id = 1, Name = "Laptop", Category = "Elektronik" },
-            new Product { Id = 2, Name = "Telefon", Category = "Elektronik" },
-            new Product { Id = 3, Name = "Koltuk", Category = "Mobilya" },
-            new Product { Id = 4, Name = "Masa", Category = "Mobilya" },
-            new Product { Id = 5, Name = "Kazak", Category = "Giyim" }
-        };
+            _productService = productService;
+        }
+
 
         [HttpGet]
-        public IActionResult Get([FromQuery] string? filter)
+        [ProducesResponseType(typeof(IEnumerable<Product>), 200)]
+        [ProducesResponseType(500)]
+        public async Task<IActionResult> Get([FromQuery] string? filter)
         {
-            var result = Products.AsEnumerable();
-            if (!string.IsNullOrWhiteSpace(filter))
+            try
             {
-                filter = filter.ToLower();
-                result = result.Where(p => p.Name.ToLower().Contains(filter) || p.Category.ToLower().Contains(filter));
+                IEnumerable<Product> products;
+                if (string.IsNullOrWhiteSpace(filter))
+                    products = await _productService.GetAllProductsAsync();
+                else
+                    products = await _productService.GetFilteredProductsAsync(filter);
+                return Ok(products);
             }
-            return Ok(result);
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, $"Bir hata oluştu: {ex.Message}");
+            }
         }
-    }
-
-
-    public class Product
-    {
-        public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public string Category { get; set; } = string.Empty;
     }
 } 
