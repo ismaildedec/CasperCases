@@ -23,7 +23,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// CORS'u aktif et
+
 app.UseCors();
 
 app.UseHttpsRedirection();
