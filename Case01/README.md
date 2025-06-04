@@ -1,4 +1,4 @@
-# 🛒 ProductApi – Ürün Listeleme ve Filtreleme API'si
+# ProductApi – Ürün Listeleme ve Filtreleme API'si
 
 ## 🎯 Proje Amacı
 
@@ -104,11 +104,13 @@ Tüm Ürünleri Listele
 ```bash
 GET /api/product
 ```
-
+![Görsel](./ProductApi/assets/api_product.png)
 
 ## 🔎 Filtreleme (İsteğe Bağlı)
-
+```bash
 GET /api/product?filter=laptop
+```
+![Görsel](./ProductApi/assets/api_productFilterLAPTOP.png)
 
 ---
 
@@ -130,7 +132,9 @@ Projeyi çalıştırdıktan sonra Swagger arayüzüne şu adresten erişebilirsi
 ```bash
 https://localhost:{port}/swagger/index.html
 ```
+![Görsel](./ProductApi/assets/Tryitout.png) 
 ---
+
 ## 🧪 Test Senaryoları
 
 | Senaryo            | URL                           | Açıklama                      |
