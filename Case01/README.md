@@ -1,17 +1,48 @@
-ProductApi
+ProductApi – Ürün Listeleme ve Filtreleme API'si
 
-Proje Hakkında Açıklama :
-  Bu proje, C# .NET 7 Web API kullanılarak geliştirilmiş basit bir ürün listeleme ve filtreleme API'sidir. Veriler mock (bellekte sabit) olarak tutulur, herhangi bir veritabanı bağlantısı yoktur.
-Proje Kullanımı:
-  - API sadece GET metodunu destekler.
-  - /product endpoint'ine istek atıldığında tüm ürünler JSON olarak döner.
-  - ?filter= query parametresi ile ürün adı veya kategoriye göre filtreleme yapılabilir.
-    - Örnek: /product?filter=elektronik 
-Geliştirme Notları:
-  - Proje sade ve okunabilir olacak şekilde, ek servis katmanları olmadan tek controller üzerinden yazılmıştır.
-  - Ürünler ve model doğrudan controller içinde tanımlanmıştır.
-  - WeatherForecast ile ilgili varsayılan dosyalar silinmiştir.
-Proje Çalıştırma:
-  1. Proje klasöründe terminal açın.
-  2. dotnet run komutunu çalıştırın.
-  3. Tarayıcıdan http://localhost:port/product adresine GET isteği atarak sonucu görebilirsiniz.
+ Proje Tanımı 
+
+
+   Mock verilerle çalışan basit bir ürün listeleme ve filtreleme API’si geliştirmek amacıyla oluşturulmuştur. API, GET metodunu kullanarak ürünlerin listelenmesini ve istenirse ürün adı veya kategorisine göre filtrelenmesini sağlar.
+
+
+📁 Proje Yapısı
+
+
+  ProductApi/
+├── Controllers/
+│   └── ProductController.cs
+├── Models/
+│   └── Product.cs
+├── Services/
+│   ├── IProductService.cs
+│   └── ProductService.cs
+├── Data/
+│   └── MockData.cs
+├── DTOs/
+│   └── ProductFilterDto.cs
+└── Program.cs
+
+📦 Models/Product.cs
+
+
+Product model sınıfı burada tanımlıdır.
+
+Özellikler: Id, Name, Category
+
+Her property XML dokümantasyonu ile açıklanmıştır.
+
+Basit veri modellemesi ile anlaşılır ve genişletilebilir bir yapı sunar.
+
+
+📤 DTOs/ProductFilterDto.cs
+
+
+API’ye gelen filter query parametresini karşılayan veri transfer objesi.
+
+filter alanı sayesinde ürün adı ya da kategoriye göre filtreleme yapılabilir.
+
+XML yorumları ile Swagger UI’de detaylı açıklama sağlanır.
+
+
+
