@@ -109,4 +109,15 @@ npm run dev
 # http://localhost:5173
 ```
 ---
-
+## Uygulamadan Görseller
+### Ürün Listeleme
+![Görsel](./assets/Home.png)
+### Ürün Ekleme
+![Görsel](./assets/add.png)
+![Görsel](./assets/productAdded.png)
+### Ürün Güncelleme
+![Görsel](./assets/Updated.png)
+![Görsel](./assets/productUpdated.png)
+### Ürün Silme
+![Görsel](./assets/Deletee.png)
+![Görsel](./assets/productDelete.png)
