@@ -21,7 +21,7 @@ namespace ProductApi.Controllers
             new Product { Id = 2, Name = "Koltuk", Price = 5000, CategoryId = 2 }
         };
 
- 
+   
         [HttpGet]
         public ActionResult<IEnumerable<ProductDto>> GetAll()
         {
@@ -57,7 +57,7 @@ namespace ProductApi.Controllers
             return CreatedAtAction(nameof(GetAll), new { id = product.Id }, result);
         }
 
-        
+
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] ProductCreateDto dto)
         {
@@ -70,7 +70,6 @@ namespace ProductApi.Controllers
             return NoContent();
         }
 
-       
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -81,7 +80,7 @@ namespace ProductApi.Controllers
             return NoContent();
         }
 
-        
+
         [HttpGet("categories")]
         public ActionResult<IEnumerable<Category>> GetCategories()
         {
@@ -89,7 +88,7 @@ namespace ProductApi.Controllers
         }
     }
 
-    
+
     public class Product
     {
         public int Id { get; set; }
