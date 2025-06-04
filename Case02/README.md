@@ -1,0 +1,2 @@
+Ürün Yönetimi Sistemi (Product Management System)
+Bu proje, .NET Core Web API backend'i ve React frontend'i kullanarak geliştirilmiş kapsamlı bir ürün yönetim sistemidir. Case çalışması kapsamında CRUD (Create, Read, Update, Delete) operasyonları ve kategori yönetimi özelliklerini içermektedir.
