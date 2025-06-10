@@ -8,21 +8,21 @@ API, `GET` metodunu kullanarak ürünlerin listelenmesini ve istenirse ürün ad
 ---
 
 ## 📁 Proje Yapısı
-
+```bash
 ProductApi/
 ├── Controllers/
-│ └── ProductController.cs
+│   └── ProductController.cs          
 ├── Models/
-│ └── Product.cs
+│   └── Product.cs                     
 ├── Services/
-│ ├── IProductService.cs
-│ └── ProductService.cs
+│   ├── IProductService.cs            
+│   └── ProductService.cs              
 ├── Data/
-│ └── MockData.cs
+│   └── MockData.cs                    
 ├── DTOs/
-│ └── ProductFilterDto.cs
-└── Program.cs
-
+│   └── ProductFilterDto.cs            
+└── Program.cs                         
+```
 
 ---
 
@@ -39,7 +39,7 @@ ProductApi/
 
 • API’ye gelen `filter` query parametresini karşılayan veri transfer objesi.  
 • `filter` alanı sayesinde ürün adı ya da kategoriye göre filtreleme yapılabilir.  
-• XML yorumları ile Swagger UI’de detaylı açıklama sağlanır.
+
 
 ---
 
@@ -106,7 +106,7 @@ GET /api/product
 ```
 ![Görsel](./ProductApi/assets/api_product.png)
 
-## 🔎 Filtreleme (İsteğe Bağlı)
+## 🔎 Filtreleme
 ```bash
 GET /api/product?filter=laptop
 ```
